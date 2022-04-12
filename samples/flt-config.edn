@@ -1,0 +1,11 @@
+{:teams-endpoint "http://localhost:9876"
+ ;; Oldest date we take into account
+ :age 31536000000 #_86400000 #_(* 1000 3600 24 365)
+ ;; The services we are filtering on. Empty list means all services. 
+ :service {;; :include #{"Cloud Key Management Service"}
+           }
+ ;; The stati we are filtering on. Empty list means all stati. 
+ :status {:include #{"SERVICE_DISRUPTION" "SERVICE_OUTAGE"}}
+ ;; The locations we are filting on. Empty list means ... all locations. 
+ :locations {;; :include #{"europe-west1"}
+             }}

@@ -1,0 +1,29 @@
+{
+  "name": "ghcs-to-teams-fn",
+  "main": "./src/main/index-nbb.mjs",
+  "version": "0.0.1",
+  "private": true,
+  "devDependencies": {
+    "shadow-cljs": "2.15.12"
+  },
+  "dependencies": {
+    "@google-cloud/functions-framework": "1.9.0",
+    "nbb": "0.2.8",
+    "strftime": "^0.10.0"
+  },
+  "scripts": {
+    "serve": "ERR_LOG_PAYLOAD=true node --inspect node_modules/@google-cloud/functions-framework --signature-type=event --source ./dist/function --target=handle",
+    "serve-nbb": "functions-framework --signature-type=event --source ./src --target=handle",
+    "_serve": "AUTH_TOKEN=s3cr3t functions-framework --signature-type=http --source ./dist/function --target=handle",
+    "_serve-nbb": "AUTH_TOKEN=s3cr3t functions-framework --signature-type=http --source ./src --target=handle",
+    "start": "node dist/node/index.js",
+    "test": "shadow-cljs compile :test",
+    "watch": "shadow-cljs watch :node",
+    "repl": "shadow-cljs cljs-repl :node",
+    "check": "shadow-cljs check :cloud-function",
+    "build": "shadow-cljs release :cloud-function --debug",
+    "gcp-build": "npm run build",
+    "predeploy": "npm run build",
+    "deploy": "terraform apply"
+  }
+}
