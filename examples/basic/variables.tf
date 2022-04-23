@@ -1,7 +1,18 @@
+variable "teams_webhook_url_secret" {
+  type        = string
+  description = "The URL of the the MS Teams Webhook Secret"
+  default     = ""
+}
 variable "project_id" {
   type        = string
   description = "The ID of the project to which resources will be applied."
 }
+
+#variable "secret_project_id" {
+#  type        = string
+#  description = "The ID of the secret project."
+#  default     = ""
+#}
 
 variable "region" {
   type        = string

@@ -26,6 +26,10 @@
 (defn to-date-string [millis]
   #?(:cljs (strftime "%B %d, %Y %H:%M:%S" (js/Date. millis))))
 
+(defn get-env [key]
+  #?(:clj (System/getenv key)
+     :cljs (aget js/process "env" key)))
+
 (defn date
   ([v]
    #?(:cljs (js/Date. v)))
@@ -105,6 +109,10 @@
   ;; #?(:cljs base64/decodeString str)
   (.from js/Buffer str "base64"))
 
+(defn base-64-encode [str]
+  (let [buff (.from js/Buffer str "utf-8")]
+    (.toString buff "base64")))
+
 (defn unwrap-burrito [burrito]
   (-> burrito
       to-clj
@@ -116,8 +124,7 @@
 (defn handle
   [flt-config success-fn fail-fn]
   (infof "Handle with config %s" flt-config)
-  (let [;; err-log-payload (= "true" (.. js/process -env -ERR_LOG_PAYLOAD))
-        teams-endpoint (:teams-endpoint flt-config)
+  (let [teams-endpoint (:teams-endpoint flt-config)
         incidents-endpoint "https://status.cloud.google.com/incidents.json"
         opts {:timeout 2000}
         google-req {}
@@ -152,7 +159,8 @@
 
 (defn handle-request
   [data context callback]
-  (handle (unwrap-burrito data)
+  (handle (merge {:teams-endpoint (get-env "TEAMS_WEBHOOK_URL")}
+                 (unwrap-burrito data))
           (fn [r]
             (infof "Received : %s" r)
             (callback))

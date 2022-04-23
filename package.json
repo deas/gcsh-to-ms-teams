@@ -12,18 +12,12 @@
     "strftime": "^0.10.0"
   },
   "scripts": {
-    "serve": "ERR_LOG_PAYLOAD=true node --inspect node_modules/@google-cloud/functions-framework --signature-type=event --source ./dist/function --target=handle",
-    "serve-nbb": "functions-framework --signature-type=event --source ./src --target=handle",
-    "_serve": "AUTH_TOKEN=s3cr3t functions-framework --signature-type=http --source ./dist/function --target=handle",
-    "_serve-nbb": "AUTH_TOKEN=s3cr3t functions-framework --signature-type=http --source ./src --target=handle",
+    "serve": "TEAMS_WEBHOOK_URL=http://localhost:9876/s3cr3t ERR_LOG_PAYLOAD=true node --inspect node_modules/@google-cloud/functions-framework --signature-type=event --source ./dist/function --target=handle",
     "start": "node dist/node/index.js",
     "test": "shadow-cljs compile :test",
     "watch": "shadow-cljs watch :node",
     "repl": "shadow-cljs cljs-repl :node",
     "check": "shadow-cljs check :cloud-function",
-    "build": "shadow-cljs release :cloud-function --debug",
-    "gcp-build": "npm run build",
-    "predeploy": "npm run build",
-    "deploy": "terraform apply"
+    "build": "shadow-cljs release :cloud-function --debug"
   }
 }

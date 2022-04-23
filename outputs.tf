@@ -1,14 +1,14 @@
-output "project_id" {
-  value       = var.project_id
-  description = "The project in which resources are applied."
+output "path" {
+  description = "The path to the function build artifacts"
+  value       = "${path.module}/dist/function"
 }
 
-output "region" {
-  value       = var.region
-  description = "The region in which resources are applied."
+output "entry_point" {
+  description = "The function entry point"
+  value       = "handle"
 }
 
-output "function_name" {
-  value       = module.gcsh_to_teams.name
-  description = "The name of the function created"
+output "runtime" {
+  description = "The runtime"
+  value       = "nodejs14"
 }

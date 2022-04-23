@@ -1,0 +1,8 @@
+{
+    "name": "cljc-gcsh-to-teams-fn",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {
+      "strftime": "^0.10.0"
+    }
+  }
