@@ -7,12 +7,12 @@
     "shadow-cljs": "2.15.12"
   },
   "dependencies": {
-    "@google-cloud/functions-framework": "1.9.0",
+    "@google-cloud/functions-framework": "~3.1.0",
     "nbb": "0.2.8",
     "strftime": "^0.10.0"
   },
   "scripts": {
-    "serve": "TEAMS_WEBHOOK_URL=http://localhost:9876/s3cr3t ERR_LOG_PAYLOAD=true node --inspect node_modules/@google-cloud/functions-framework --signature-type=event --source ./dist/function --target=handle",
+    "serve": "TEAMS_WEBHOOK_URL=http://localhost:9876/s3cr3t node --inspect node_modules/.bin/functions-framework --signature-type=event --source ./dist/function --target=handle",
     "start": "node dist/node/index.js",
     "test": "shadow-cljs compile :test",
     "watch": "shadow-cljs watch :node",
