@@ -44244,6 +44244,8 @@ var gcsh_to_teams = {start:function() {
   return cljs.core.js__GT_clj.cljs$core$IFn$_invoke$arity$variadic($json$$, cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([cljs$cst$keyword$keywordize_DASH_keys, !0], 0));
 }, to_date_string:function($millis$$) {
   return shadow.js.shim.module$strftime("%B %d, %Y %H:%M:%S", new Date($millis$$));
+}, get_env:function($key$$) {
+  return process.env[$key$$];
 }, date:function($var_args$$) {
   switch(arguments.length) {
     case 1:
@@ -44262,27 +44264,27 @@ gcsh_to_teams.date.cljs$core$IFn$_invoke$arity$0 = function() {
 };
 gcsh_to_teams.date.cljs$lang$maxFixedArity = 1;
 taoensso.timbre.merge_config_BANG_(new cljs.core.PersistentArrayMap(null, 1, [cljs$cst$keyword$output_DASH_fn, function($_QMARK_err$jscomp$6_data$$) {
-  var $_QMARK_line$$ = cljs.core.__destructure_map($_QMARK_err$jscomp$6_data$$), $G__14261$jscomp$inline_1042_level$$ = cljs.core.get.cljs$core$IFn$_invoke$arity$2($_QMARK_line$$, cljs$cst$keyword$level);
+  var $_QMARK_line$$ = cljs.core.__destructure_map($_QMARK_err$jscomp$6_data$$), $G__9555$jscomp$inline_1042_level$$ = cljs.core.get.cljs$core$IFn$_invoke$arity$2($_QMARK_line$$, cljs$cst$keyword$level);
   $_QMARK_err$jscomp$6_data$$ = cljs.core.get.cljs$core$IFn$_invoke$arity$2($_QMARK_line$$, cljs$cst$keyword$_QMARK_err);
-  var $msg_$$ = cljs.core.get.cljs$core$IFn$_invoke$arity$2($_QMARK_line$$, cljs$cst$keyword$msg_), $G__14261__$1$jscomp$inline_1043_G__14261__$2$jscomp$inline_1044__QMARK_ns_str$$ = cljs.core.get.cljs$core$IFn$_invoke$arity$2($_QMARK_line$$, cljs$cst$keyword$_QMARK_ns_DASH_str), $_QMARK_file$$ = cljs.core.get.cljs$core$IFn$_invoke$arity$2($_QMARK_line$$, cljs$cst$keyword$_QMARK_file), $hostname_$$ = cljs.core.get.cljs$core$IFn$_invoke$arity$2($_QMARK_line$$, cljs$cst$keyword$hostname_), $timestamp_$$ = 
+  var $msg_$$ = cljs.core.get.cljs$core$IFn$_invoke$arity$2($_QMARK_line$$, cljs$cst$keyword$msg_), $G__9555__$1$jscomp$inline_1043_G__9555__$2$jscomp$inline_1044__QMARK_ns_str$$ = cljs.core.get.cljs$core$IFn$_invoke$arity$2($_QMARK_line$$, cljs$cst$keyword$_QMARK_ns_DASH_str), $_QMARK_file$$ = cljs.core.get.cljs$core$IFn$_invoke$arity$2($_QMARK_line$$, cljs$cst$keyword$_QMARK_file), $hostname_$$ = cljs.core.get.cljs$core$IFn$_invoke$arity$2($_QMARK_line$$, cljs$cst$keyword$hostname_), $timestamp_$$ = 
   cljs.core.get.cljs$core$IFn$_invoke$arity$2($_QMARK_line$$, cljs$cst$keyword$timestamp_);
   $_QMARK_line$$ = cljs.core.get.cljs$core$IFn$_invoke$arity$2($_QMARK_line$$, cljs$cst$keyword$_QMARK_line);
-  $G__14261$jscomp$inline_1042_level$$ = new cljs.core.PersistentArrayMap(null, 4, [cljs$cst$keyword$timestamp, cljs.core.force($timestamp_$$), cljs$cst$keyword$host, cljs.core.force($hostname_$$), cljs$cst$keyword$severity, clojure.string.upper_case(cljs.core.name($G__14261$jscomp$inline_1042_level$$)), cljs$cst$keyword$message, cljs.core.force($msg_$$)], null);
-  $G__14261__$1$jscomp$inline_1043_G__14261__$2$jscomp$inline_1044__QMARK_ns_str$$ = cljs.core.truth_(cljs.core.truth_($G__14261__$1$jscomp$inline_1043_G__14261__$2$jscomp$inline_1044__QMARK_ns_str$$) ? $G__14261__$1$jscomp$inline_1043_G__14261__$2$jscomp$inline_1044__QMARK_ns_str$$ : $_QMARK_file$$) ? cljs.core.assoc.cljs$core$IFn$_invoke$arity$3($G__14261$jscomp$inline_1042_level$$, cljs$cst$keyword$ns, cljs.core.truth_($G__14261__$1$jscomp$inline_1043_G__14261__$2$jscomp$inline_1044__QMARK_ns_str$$) ? 
-  $G__14261__$1$jscomp$inline_1043_G__14261__$2$jscomp$inline_1044__QMARK_ns_str$$ : $_QMARK_file$$) : $G__14261$jscomp$inline_1042_level$$;
-  $G__14261__$1$jscomp$inline_1043_G__14261__$2$jscomp$inline_1044__QMARK_ns_str$$ = cljs.core.truth_($_QMARK_line$$) ? cljs.core.assoc.cljs$core$IFn$_invoke$arity$3($G__14261__$1$jscomp$inline_1043_G__14261__$2$jscomp$inline_1044__QMARK_ns_str$$, cljs$cst$keyword$line, $_QMARK_line$$) : $G__14261__$1$jscomp$inline_1043_G__14261__$2$jscomp$inline_1044__QMARK_ns_str$$;
-  $_QMARK_err$jscomp$6_data$$ = cljs.core.truth_($_QMARK_err$jscomp$6_data$$) ? cljs.core.assoc.cljs$core$IFn$_invoke$arity$3($G__14261__$1$jscomp$inline_1043_G__14261__$2$jscomp$inline_1044__QMARK_ns_str$$, cljs$cst$keyword$err, taoensso.timbre.stacktrace.cljs$core$IFn$_invoke$arity$2($_QMARK_err$jscomp$6_data$$, new cljs.core.PersistentArrayMap(null, 1, [cljs$cst$keyword$stacktrace_DASH_fonts, cljs.core.PersistentArrayMap.EMPTY], null))) : $G__14261__$1$jscomp$inline_1043_G__14261__$2$jscomp$inline_1044__QMARK_ns_str$$;
+  $G__9555$jscomp$inline_1042_level$$ = new cljs.core.PersistentArrayMap(null, 4, [cljs$cst$keyword$timestamp, cljs.core.force($timestamp_$$), cljs$cst$keyword$host, cljs.core.force($hostname_$$), cljs$cst$keyword$severity, clojure.string.upper_case(cljs.core.name($G__9555$jscomp$inline_1042_level$$)), cljs$cst$keyword$message, cljs.core.force($msg_$$)], null);
+  $G__9555__$1$jscomp$inline_1043_G__9555__$2$jscomp$inline_1044__QMARK_ns_str$$ = cljs.core.truth_(cljs.core.truth_($G__9555__$1$jscomp$inline_1043_G__9555__$2$jscomp$inline_1044__QMARK_ns_str$$) ? $G__9555__$1$jscomp$inline_1043_G__9555__$2$jscomp$inline_1044__QMARK_ns_str$$ : $_QMARK_file$$) ? cljs.core.assoc.cljs$core$IFn$_invoke$arity$3($G__9555$jscomp$inline_1042_level$$, cljs$cst$keyword$ns, cljs.core.truth_($G__9555__$1$jscomp$inline_1043_G__9555__$2$jscomp$inline_1044__QMARK_ns_str$$) ? 
+  $G__9555__$1$jscomp$inline_1043_G__9555__$2$jscomp$inline_1044__QMARK_ns_str$$ : $_QMARK_file$$) : $G__9555$jscomp$inline_1042_level$$;
+  $G__9555__$1$jscomp$inline_1043_G__9555__$2$jscomp$inline_1044__QMARK_ns_str$$ = cljs.core.truth_($_QMARK_line$$) ? cljs.core.assoc.cljs$core$IFn$_invoke$arity$3($G__9555__$1$jscomp$inline_1043_G__9555__$2$jscomp$inline_1044__QMARK_ns_str$$, cljs$cst$keyword$line, $_QMARK_line$$) : $G__9555__$1$jscomp$inline_1043_G__9555__$2$jscomp$inline_1044__QMARK_ns_str$$;
+  $_QMARK_err$jscomp$6_data$$ = cljs.core.truth_($_QMARK_err$jscomp$6_data$$) ? cljs.core.assoc.cljs$core$IFn$_invoke$arity$3($G__9555__$1$jscomp$inline_1043_G__9555__$2$jscomp$inline_1044__QMARK_ns_str$$, cljs$cst$keyword$err, taoensso.timbre.stacktrace.cljs$core$IFn$_invoke$arity$2($_QMARK_err$jscomp$6_data$$, new cljs.core.PersistentArrayMap(null, 1, [cljs$cst$keyword$stacktrace_DASH_fonts, cljs.core.PersistentArrayMap.EMPTY], null))) : $G__9555__$1$jscomp$inline_1043_G__9555__$2$jscomp$inline_1044__QMARK_ns_str$$;
   return gcsh_to_teams.to_json($_QMARK_err$jscomp$6_data$$);
 }], null));
 gcsh_to_teams.filter_incidents = function($incidents_payload$$, $flt_config$$) {
   var $ref_date$$ = gcsh_to_teams.date.cljs$core$IFn$_invoke$arity$1(gcsh_to_teams.date.cljs$core$IFn$_invoke$arity$0().getTime() - cljs$cst$keyword$age.cljs$core$IFn$_invoke$arity$1($flt_config$$)), $loc_include$$ = cljs$cst$keyword$include.cljs$core$IFn$_invoke$arity$1(cljs$cst$keyword$locations.cljs$core$IFn$_invoke$arity$1($flt_config$$)), $srv_include$$ = cljs$cst$keyword$include.cljs$core$IFn$_invoke$arity$1(cljs$cst$keyword$service.cljs$core$IFn$_invoke$arity$1($flt_config$$)), $status_include$$ = 
   cljs$cst$keyword$include.cljs$core$IFn$_invoke$arity$1(cljs$cst$keyword$status.cljs$core$IFn$_invoke$arity$1($flt_config$$));
-  return cljs.core.filter.cljs$core$IFn$_invoke$arity$2(function($p1__14276_SHARP_$$) {
+  return cljs.core.filter.cljs$core$IFn$_invoke$arity$2(function($p1__9560_SHARP_$$) {
     var $JSCompiler_temp$jscomp$362_JSCompiler_temp$jscomp$363_JSCompiler_temp$$;
-    if ($JSCompiler_temp$jscomp$362_JSCompiler_temp$jscomp$363_JSCompiler_temp$$ = $ref_date$$ < (new Date(cljs$cst$keyword$created.cljs$core$IFn$_invoke$arity$1(cljs$cst$keyword$most_recent_update.cljs$core$IFn$_invoke$arity$1($p1__14276_SHARP_$$)))).getTime()) {
-      if ($JSCompiler_temp$jscomp$362_JSCompiler_temp$jscomp$363_JSCompiler_temp$$ = cljs.core.not(cljs.core.seq($status_include$$)) || cljs.core.contains_QMARK_($status_include$$, cljs$cst$keyword$status.cljs$core$IFn$_invoke$arity$1(cljs$cst$keyword$most_recent_update.cljs$core$IFn$_invoke$arity$1($p1__14276_SHARP_$$)))) {
-        if ($JSCompiler_temp$jscomp$362_JSCompiler_temp$jscomp$363_JSCompiler_temp$$ = cljs.core.not(cljs.core.seq($loc_include$$)) || cljs.core.seq(clojure.set.intersection.cljs$core$IFn$_invoke$arity$2($loc_include$$, cljs.core.into.cljs$core$IFn$_invoke$arity$2(cljs.core.PersistentHashSet.EMPTY, cljs$cst$keyword$currently_affected_locations.cljs$core$IFn$_invoke$arity$1($p1__14276_SHARP_$$))))) {
-          $JSCompiler_temp$jscomp$362_JSCompiler_temp$jscomp$363_JSCompiler_temp$$ = cljs.core.not(cljs.core.seq($srv_include$$)) || cljs.core.contains_QMARK_($srv_include$$, cljs$cst$keyword$service_name.cljs$core$IFn$_invoke$arity$1($p1__14276_SHARP_$$));
+    if ($JSCompiler_temp$jscomp$362_JSCompiler_temp$jscomp$363_JSCompiler_temp$$ = $ref_date$$ < (new Date(cljs$cst$keyword$created.cljs$core$IFn$_invoke$arity$1(cljs$cst$keyword$most_recent_update.cljs$core$IFn$_invoke$arity$1($p1__9560_SHARP_$$)))).getTime()) {
+      if ($JSCompiler_temp$jscomp$362_JSCompiler_temp$jscomp$363_JSCompiler_temp$$ = cljs.core.not(cljs.core.seq($status_include$$)) || cljs.core.contains_QMARK_($status_include$$, cljs$cst$keyword$status.cljs$core$IFn$_invoke$arity$1(cljs$cst$keyword$most_recent_update.cljs$core$IFn$_invoke$arity$1($p1__9560_SHARP_$$)))) {
+        if ($JSCompiler_temp$jscomp$362_JSCompiler_temp$jscomp$363_JSCompiler_temp$$ = cljs.core.not(cljs.core.seq($loc_include$$)) || cljs.core.seq(clojure.set.intersection.cljs$core$IFn$_invoke$arity$2($loc_include$$, cljs.core.into.cljs$core$IFn$_invoke$arity$2(cljs.core.PersistentHashSet.EMPTY, cljs$cst$keyword$currently_affected_locations.cljs$core$IFn$_invoke$arity$1($p1__9560_SHARP_$$))))) {
+          $JSCompiler_temp$jscomp$362_JSCompiler_temp$jscomp$363_JSCompiler_temp$$ = cljs.core.not(cljs.core.seq($srv_include$$)) || cljs.core.contains_QMARK_($srv_include$$, cljs$cst$keyword$service_name.cljs$core$IFn$_invoke$arity$1($p1__9560_SHARP_$$));
         }
       }
     }
@@ -44297,27 +44299,30 @@ gcsh_to_teams.gcsh_to_teams = function($body$$) {
   2, [cljs$cst$keyword$title, "Created", cljs$cst$keyword$value, gcsh_to_teams.to_date_string($body$$)], null), new cljs.core.PersistentArrayMap(null, 2, [cljs$cst$keyword$title, "Status", cljs$cst$keyword$value, cljs$cst$keyword$status.cljs$core$IFn$_invoke$arity$1($incident$$)], null), new cljs.core.PersistentArrayMap(null, 2, [cljs$cst$keyword$title, "Locations", cljs$cst$keyword$value, clojure.string.join.cljs$core$IFn$_invoke$arity$2(",", cljs.core.map.cljs$core$IFn$_invoke$arity$2(cljs$cst$keyword$id, 
   cljs$cst$keyword$affected_locations.cljs$core$IFn$_invoke$arity$1($incident$$)))], null)], null);
   $body$$ = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentArrayMap(null, 2, [cljs$cst$keyword$type, "FactSet", cljs$cst$keyword$facts, $body$$], null), new cljs.core.PersistentArrayMap(null, 3, [cljs$cst$keyword$type, "TextBlock", cljs$cst$keyword$text, cljs$cst$keyword$text.cljs$core$IFn$_invoke$arity$1($incident$$), cljs$cst$keyword$color, "attention"], null)], null);
-  taoensso.timbre._log_BANG_.cljs$core$IFn$_invoke$arity$11(taoensso.timbre._STAR_config_STAR_, cljs$cst$keyword$info, "gcsh-to-teams", null, 94, cljs$cst$keyword$f, cljs$cst$keyword$auto, new cljs.core.Delay(function() {
+  taoensso.timbre._log_BANG_.cljs$core$IFn$_invoke$arity$11(taoensso.timbre._STAR_config_STAR_, cljs$cst$keyword$info, "gcsh-to-teams", null, 98, cljs$cst$keyword$f, cljs$cst$keyword$auto, new cljs.core.Delay(function() {
     return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, ["Creating teams message for incident %s", cljs$cst$keyword$number.cljs$core$IFn$_invoke$arity$1($incident$$)], null);
-  }, null), null, -448820915, null);
+  }, null), null, 1129523638, null);
   return new cljs.core.PersistentArrayMap(null, 3, [cljs$cst$keyword$type, "message", cljs$cst$keyword$importance, "urgent", cljs$cst$keyword$attachments, new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentArrayMap(null, 3, [cljs$cst$keyword$contentType, "application/vnd.microsoft.card.adaptive", cljs$cst$keyword$contentUrl, null, cljs$cst$keyword$content, new cljs.core.PersistentArrayMap(null, 4, [cljs$cst$keyword$$schema, "http://adaptivecards.io/schemas/adaptive-card.json", 
   cljs$cst$keyword$type, "AdaptiveCard", cljs$cst$keyword$version, "1.2", cljs$cst$keyword$body, $body$$], null)], null)], null)], null);
 };
 gcsh_to_teams.base_64_decode = function($str$$) {
   return Buffer.from($str$$, "base64");
 };
+gcsh_to_teams.base_64_encode = function($str$$) {
+  return Buffer.from($str$$, "utf-8").toString("base64");
+};
 gcsh_to_teams.unwrap_burrito = function($burrito$$) {
   return cljs.reader.read_string.cljs$core$IFn$_invoke$arity$1(gcsh_to_teams.base_64_decode(cljs$cst$keyword$data.cljs$core$IFn$_invoke$arity$1(gcsh_to_teams.to_clj($burrito$$))).toString());
 };
 gcsh_to_teams.handle = function($flt_config$$, $success_fn$$, $fail_fn$$) {
-  taoensso.timbre._log_BANG_.cljs$core$IFn$_invoke$arity$11(taoensso.timbre._STAR_config_STAR_, cljs$cst$keyword$info, "gcsh-to-teams", null, 118, cljs$cst$keyword$f, cljs$cst$keyword$auto, new cljs.core.Delay(function() {
+  taoensso.timbre._log_BANG_.cljs$core$IFn$_invoke$arity$11(taoensso.timbre._STAR_config_STAR_, cljs$cst$keyword$info, "gcsh-to-teams", null, 126, cljs$cst$keyword$f, cljs$cst$keyword$auto, new cljs.core.Delay(function() {
     return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, ["Handle with config %s", $flt_config$$], null);
-  }, null), null, -783547270, null);
+  }, null), null, -1770257774, null);
   var $teams_endpoint$$ = cljs$cst$keyword$teams_DASH_endpoint.cljs$core$IFn$_invoke$arity$1($flt_config$$), $opts$$ = new cljs.core.PersistentArrayMap(null, 1, [cljs$cst$keyword$timeout, 2000], null), $google_req$$ = cljs.core.PersistentArrayMap.EMPTY, $next_fn$$ = cljs.core.truth_($teams_endpoint$$) ? function($raw_payload$$) {
     var $unfiltered_payload$$ = gcsh_to_teams.to_clj(JSON.parse(cljs$cst$keyword$body.cljs$core$IFn$_invoke$arity$1($raw_payload$$).toString())), $filtered_payload$$ = gcsh_to_teams.filter_incidents($unfiltered_payload$$, $flt_config$$);
-    taoensso.timbre._log_BANG_.cljs$core$IFn$_invoke$arity$11(taoensso.timbre._STAR_config_STAR_, cljs$cst$keyword$info, "gcsh-to-teams", null, 132, cljs$cst$keyword$f, cljs$cst$keyword$auto, new cljs.core.Delay(function() {
+    taoensso.timbre._log_BANG_.cljs$core$IFn$_invoke$arity$11(taoensso.timbre._STAR_config_STAR_, cljs$cst$keyword$info, "gcsh-to-teams", null, 139, cljs$cst$keyword$f, cljs$cst$keyword$auto, new cljs.core.Delay(function() {
       return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, ["Got %d incidents, %d filtered", cljs.core.count($unfiltered_payload$$), cljs.core.count($filtered_payload$$)], null);
-    }, null), null, -1517992158, null);
+    }, null), null, 845614538, null);
     return 0 < cljs.core.count($filtered_payload$$) ? promesa.core.all(cljs.core.mapv.cljs$core$IFn$_invoke$arity$2(function($body$$) {
       $body$$ = gcsh_to_teams.to_json(gcsh_to_teams.gcsh_to_teams($body$$));
       return httpurr.client.node.post($teams_endpoint$$, new cljs.core.PersistentArrayMap(null, 2, [cljs$cst$keyword$headers, new cljs.core.PersistentArrayMap(null, 2, ["Content-Type", "application/json", "Content-Length", cljs.core.count($body$$)], null), cljs$cst$keyword$body, $body$$], null), $opts$$);
@@ -44325,35 +44330,35 @@ gcsh_to_teams.handle = function($flt_config$$, $success_fn$$, $fail_fn$$) {
   } : function() {
     return promesa.core.resolved("No teams endpoint configured");
   };
-  taoensso.timbre._log_BANG_.cljs$core$IFn$_invoke$arity$11(taoensso.timbre._STAR_config_STAR_, cljs$cst$keyword$info, "gcsh-to-teams", null, 145, cljs$cst$keyword$f, cljs$cst$keyword$auto, new cljs.core.Delay(function() {
+  taoensso.timbre._log_BANG_.cljs$core$IFn$_invoke$arity$11(taoensso.timbre._STAR_config_STAR_, cljs$cst$keyword$info, "gcsh-to-teams", null, 152, cljs$cst$keyword$f, cljs$cst$keyword$auto, new cljs.core.Delay(function() {
     return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, ["Getting all incidents from %s", "https://status.cloud.google.com/incidents.json"], null);
-  }, null), null, 1812898794, null);
-  return promesa.core.catch$.cljs$core$IFn$_invoke$arity$2(promesa.core.then.cljs$core$IFn$_invoke$arity$2(promesa.core.then.cljs$core$IFn$_invoke$arity$2(httpurr.client.node.get("https://status.cloud.google.com/incidents.json", $google_req$$, $opts$$), function($p1__14292_SHARP_$$) {
-    return httpurr.status.success_QMARK_($p1__14292_SHARP_$$) ? $next_fn$$($p1__14292_SHARP_$$) : promesa.core.rejected($p1__14292_SHARP_$$);
+  }, null), null, 2071198605, null);
+  return promesa.core.catch$.cljs$core$IFn$_invoke$arity$2(promesa.core.then.cljs$core$IFn$_invoke$arity$2(promesa.core.then.cljs$core$IFn$_invoke$arity$2(httpurr.client.node.get("https://status.cloud.google.com/incidents.json", $google_req$$, $opts$$), function($p1__9562_SHARP_$$) {
+    return httpurr.status.success_QMARK_($p1__9562_SHARP_$$) ? $next_fn$$($p1__9562_SHARP_$$) : promesa.core.rejected($p1__9562_SHARP_$$);
   }), $success_fn$$), $fail_fn$$);
 };
 gcsh_to_teams.handle_request = function($data$$, $context$$, $callback$$) {
-  return gcsh_to_teams.handle(gcsh_to_teams.unwrap_burrito($data$$), function($r$$) {
-    taoensso.timbre._log_BANG_.cljs$core$IFn$_invoke$arity$11(taoensso.timbre._STAR_config_STAR_, cljs$cst$keyword$info, "gcsh-to-teams", null, 157, cljs$cst$keyword$f, cljs$cst$keyword$auto, new cljs.core.Delay(function() {
+  return gcsh_to_teams.handle(cljs.core.merge.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.PersistentArrayMap(null, 1, [cljs$cst$keyword$teams_DASH_endpoint, gcsh_to_teams.get_env("TEAMS_WEBHOOK_URL")], null), gcsh_to_teams.unwrap_burrito($data$$)], 0)), function($r$$) {
+    taoensso.timbre._log_BANG_.cljs$core$IFn$_invoke$arity$11(taoensso.timbre._STAR_config_STAR_, cljs$cst$keyword$info, "gcsh-to-teams", null, 165, cljs$cst$keyword$f, cljs$cst$keyword$auto, new cljs.core.Delay(function() {
       return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, ["Received : %s", $r$$], null);
-    }, null), null, -807949316, null);
+    }, null), null, 807212502, null);
     return $callback$$.cljs$core$IFn$_invoke$arity$0 ? $callback$$.cljs$core$IFn$_invoke$arity$0() : $callback$$.call(null);
   }, function($r$$) {
-    taoensso.timbre._log_BANG_.cljs$core$IFn$_invoke$arity$11(taoensso.timbre._STAR_config_STAR_, cljs$cst$keyword$warn, "gcsh-to-teams", null, 160, cljs$cst$keyword$f, cljs$cst$keyword$auto, new cljs.core.Delay(function() {
+    taoensso.timbre._log_BANG_.cljs$core$IFn$_invoke$arity$11(taoensso.timbre._STAR_config_STAR_, cljs$cst$keyword$warn, "gcsh-to-teams", null, 168, cljs$cst$keyword$f, cljs$cst$keyword$auto, new cljs.core.Delay(function() {
       return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, ["Received : %s", $r$$], null);
-    }, null), null, 47643235, null);
-    taoensso.timbre._log_BANG_.cljs$core$IFn$_invoke$arity$11(taoensso.timbre._STAR_config_STAR_, cljs$cst$keyword$warn, "gcsh-to-teams", null, 162, cljs$cst$keyword$p, cljs$cst$keyword$auto, new cljs.core.Delay(function() {
+    }, null), null, -1138121847, null);
+    taoensso.timbre._log_BANG_.cljs$core$IFn$_invoke$arity$11(taoensso.timbre._STAR_config_STAR_, cljs$cst$keyword$warn, "gcsh-to-teams", null, 170, cljs$cst$keyword$p, cljs$cst$keyword$auto, new cljs.core.Delay(function() {
       return new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, ["Payload invalid"], null);
-    }, null), null, -1870130933, null);
-    var $G__14307$$ = Error("Payload invalid");
-    return $callback$$.cljs$core$IFn$_invoke$arity$1 ? $callback$$.cljs$core$IFn$_invoke$arity$1($G__14307$$) : $callback$$.call(null, $G__14307$$);
+    }, null), null, 1896310266, null);
+    var $G__9563$$ = Error("Payload invalid");
+    return $callback$$.cljs$core$IFn$_invoke$arity$1 ? $callback$$.cljs$core$IFn$_invoke$arity$1($G__9563$$) : $callback$$.call(null, $G__9563$$);
   });
 };
 gcsh_to_teams.handle_request_http = function($req$$, $res$$) {
   return gcsh_to_teams.handle(null, function($r$$) {
-    taoensso.timbre._log_BANG_.cljs$core$IFn$_invoke$arity$11(taoensso.timbre._STAR_config_STAR_, cljs$cst$keyword$info, "gcsh-to-teams", null, 170, cljs$cst$keyword$f, cljs$cst$keyword$auto, new cljs.core.Delay(function() {
+    taoensso.timbre._log_BANG_.cljs$core$IFn$_invoke$arity$11(taoensso.timbre._STAR_config_STAR_, cljs$cst$keyword$info, "gcsh-to-teams", null, 178, cljs$cst$keyword$f, cljs$cst$keyword$auto, new cljs.core.Delay(function() {
       return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, ["Received : %s", $r$$], null);
-    }, null), null, -2132852629, null);
+    }, null), null, 1630371260, null);
     $res$$.status(function() {
       var $or__4212__auto__$$ = cljs$cst$keyword$status.cljs$core$IFn$_invoke$arity$1($r$$);
       return cljs.core.truth_($or__4212__auto__$$) ? $or__4212__auto__$$ : httpurr.status.ok;
@@ -44361,9 +44366,9 @@ gcsh_to_teams.handle_request_http = function($req$$, $res$$) {
     $res$$.send("\ud83d\udc4d");
     return $res$$;
   }, function($r$$) {
-    taoensso.timbre._log_BANG_.cljs$core$IFn$_invoke$arity$11(taoensso.timbre._STAR_config_STAR_, cljs$cst$keyword$warn, "gcsh-to-teams", null, 175, cljs$cst$keyword$f, cljs$cst$keyword$auto, new cljs.core.Delay(function() {
+    taoensso.timbre._log_BANG_.cljs$core$IFn$_invoke$arity$11(taoensso.timbre._STAR_config_STAR_, cljs$cst$keyword$warn, "gcsh-to-teams", null, 183, cljs$cst$keyword$f, cljs$cst$keyword$auto, new cljs.core.Delay(function() {
       return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, ["Received : %s", $r$$], null);
-    }, null), null, -200457721, null);
+    }, null), null, -77612863, null);
     $res$$.status(httpurr.status.internal_server_error);
     $res$$.send("Invalid request");
     return $res$$;
