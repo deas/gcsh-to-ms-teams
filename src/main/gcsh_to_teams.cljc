@@ -123,7 +123,8 @@
 
 (defn handle
   [flt-config success-fn fail-fn]
-  (infof "Handle with config %s" flt-config)
+  (infof "Handle with config %s" (cond-> flt-config
+                                   (:teams-endpoint flt-config) (assoc :teams-endpoint "***redacted***")))
   (let [teams-endpoint (:teams-endpoint flt-config)
         incidents-endpoint "https://status.cloud.google.com/incidents.json"
         opts {:timeout 2000}
