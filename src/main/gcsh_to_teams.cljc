@@ -58,6 +58,7 @@
         loc-include (-> flt-config :locations :include)
         loc-filter #(or (not (seq loc-include))
                         (seq (intersection loc-include
+                                            ;; currently_affected_locations may be empty
                                            (into #{} (:currently_affected_locations %)))))
         srv-include (-> flt-config :service :include)
         srv-filter #(or (not (seq srv-include))
