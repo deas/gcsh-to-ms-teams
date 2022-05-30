@@ -95,7 +95,8 @@
                {:title "Locations" :value (join "," (map :id (:affected_locations incident)))}]
         body [{:type "FactSet"
                :facts facts}
-              {:type "TextBlock" :text (:text incident) :color "attention" #_(if (= "open" state) "attention" "default")}]]
+              ;; https://adaptivecards.io/explorer/TextBlock.html
+              {:type "TextBlock" :wrap true :text (:text incident) :color "attention" #_(if (= "open" state) "attention" "default")}]]
     (infof "Creating teams message for incident %s" (:number incident))
     {:type "message"
      :importance "urgent" #_(if (= "open" state) "urgent" "normal")
